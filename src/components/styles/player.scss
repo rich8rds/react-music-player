@@ -1,0 +1,105 @@
+@use '../../App.scss' as app;
+
+
+.player {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    align-items: center;
+    
+    .vinyl-disk {
+      text-align: center;
+      height: 100%;
+      margin-top: 80px;
+      img{
+        width: app.$imageWidth;
+      }
+      .img {
+        font-size: app.$imageWidth;
+        color: app.$diskColor
+      }
+    .imgIsPlaying {
+      animation: App-logo-spin infinite 10s linear;
+      font-size: app.$imageWidth;
+      color: app.$diskColor
+    }
+      
+      @keyframes App-logo-spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      h3{
+        color: app.$iconColor;
+        margin-bottom: 5px;
+        font-style: italic;
+      }
+    p {
+      color: app.$artistColor;
+      font-size: 13px;
+      font-family: Lato;
+      font-weight: bold;
+    }
+  }
+
+  .controls-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .time-slider {
+      width: 100%;
+      height: 10px;
+    }
+    .time-div {
+      display: flex;
+      justify-content: space-between;
+      .counter {
+        color: app.$iconColor;
+      }
+      .totaltime {
+        color: app.$iconColorLight;
+      }
+    }
+
+    .controls {
+
+      .up {
+        .play-icon {
+          font-size: 60px;
+        }
+        .forward-icon, .back-icon {
+          font-size: 30px;
+        }
+
+        .shuffle-icon, .repeat-icon {
+          color: app.$iconColorLight;
+        }
+        .icon-active {
+          color: app.$iconColor;
+        }
+      }
+      .down {
+        .icon {
+          color: app.$iconColorLight;
+          font-size: 20px;
+        }
+        .iconRed {
+          color: red;
+        }
+      }
+      .down, .up {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+    
+  }
+}
+
+
+

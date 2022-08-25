@@ -1,0 +1,18 @@
+@use '../../App.scss' as app;
+
+.musicplayer {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  min-width: 50vw;
+  height: 80vh;
+  overflow: hidden;
+  @include app.linear-gradient(to right bottom, 
+  rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3)
+  );
+  @include app.boxshadow;
+  padding: 40px 28px;
+  backdrop-filter: blur(2rem);
+  border-radius: 20px;
+}

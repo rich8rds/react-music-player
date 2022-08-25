@@ -1,0 +1,79 @@
+$gradpink: #FAEEF4;
+$gradblue: #D6D8E3;
+$gradblueSec: #E6E9F3;
+$iconColor: #3A3438;
+$imageWidth: 150px;
+$iconColorLight: #C7C6CB;
+$artistColor: #65666e;
+$albumTextColor: #AFB0B7;
+$iconColorSec: #707070;
+
+$diskColor: #241829;
+
+@mixin linear-gradient($direction, $color-stops...) {
+// Direction has been omitted and happens to be a color-stop
+@if is-direction($direction) == false {
+  $color-stops: $direction, $color-stops;
+  $direction: 180deg;
+}
+background: nth(nth($color-stops, 1), 1);
+background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+background: linear-gradient($direction, $color-stops);
+}
+
+@mixin boxshadow() {
+  box-shadow: 9px 4px 9px -6px rgba(189,174,174,0.78);
+  -webkit-box-shadow: 9px 4px 9px -6px rgba(189,174,174,0.78);
+  -moz-box-shadow: 9px 4px 9px -6px rgba(189,174,174,0.78);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  flex-direction: column;
+  height: 100vh;
+  @include linear-gradient(120deg, $gradpink, $gradblue, $gradblueSec);
+  // background: inear-gradient(120deg, #FAEEF4, #D6D8E3, #E6E9F3);
+}
+
+
+header {
+  display: flex;
+  gap: 30px;
+}
+
+.icon {
+  color: $iconColor
+}
+
+.iconRed {
+  color: red;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, Lora, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: italic;
+}
+
+code {
+  font-family: Lora, source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#player-name {
+  font-family: Allura, sans-serif;
+  }
+
